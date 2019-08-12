@@ -40,6 +40,7 @@ server.post("/", (req, res) => {
 
 server.put("/:id", (req, res) => {
   db("accounts")
+    // THE ORDER MATTERS!!
     .where("id", "=", req.params.id)
     .update(req.body)
     .then(newPut => {

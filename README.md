@@ -28,8 +28,8 @@ X update _Bilbo Baggins_ record so that the postal code changes to _"11122"_.
 
 ### Write Accounts API
 
-- Write CRUD endpoints for the `accounts` resource. Use the `db` object imported from `data/dbConfig.js` for database access via `knex`.
-- Manually test your endpoints with a REST client like `Insomnia` or `Postman` to check they are working as expected.
+X Write CRUD endpoints for the `accounts` resource. Use the `db` object imported from `data/dbConfig.js` for database access via `knex`.
+X Manually test your endpoints with a REST client like `Insomnia` or `Postman` to check they are working as expected.
 
 #### Accounts Schema
 

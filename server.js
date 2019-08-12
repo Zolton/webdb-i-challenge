@@ -4,9 +4,20 @@ const db = require("./data/dbConfig.js");
 server.use(express.json());
 
 server.get("/", (req, res) => {
-  db.select("*")
-    .from("accounts")
-    .then(account => {
+  const query = db("accounts")
+  const { limit, orderby } = req.query;
+  if (limit) {
+    // simple and rather ingenius.  If limit is present, just tacks onto query
+    // so the GET request becomes
+    //db("accounts").select("--").limit("--")
+    query.limit(limit);
+  }
+  if (orderby) {
+    query.orderBy(orderby);
+  }
+  //db.select("*")
+   // .from("accounts")
+    query.then(account => {
       res.status(200).json(account);
     })
     .catch(error => {
